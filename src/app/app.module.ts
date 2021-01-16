@@ -8,13 +8,15 @@ import { UserListComponent } from './feature/user-list/user-list.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserCreateComponent } from './feature/user-create/user-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     MenuComponent,
-    NoComponentDefinedComponent
+    NoComponentDefinedComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,
