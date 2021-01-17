@@ -23,7 +23,7 @@ export class UserCreateComponent implements OnInit {
   }
 
   save() {
-    //subscribing to the service
+    //subscribing to the service, saving the user to the database
     this.userSvc.create(this.user).subscribe(
       resp => {
         this.user = resp as User;
