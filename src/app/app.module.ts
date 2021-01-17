@@ -4,11 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { UserListComponent } from './feature/user-list/user-list.component';
+import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserCreateComponent } from './feature/user-create/user-create.component';
+import { UserCreateComponent } from './feature/user/user-create/user-create.component';
+import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserCreateComponent } from './feature/user-create/user-create.component
     UserListComponent,
     MenuComponent,
     NoComponentDefinedComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
