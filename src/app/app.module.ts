@@ -10,6 +10,7 @@ import { NoComponentDefinedComponent } from './core/no-component-defined/no-comp
 import { HttpClientModule } from '@angular/common/http';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
+import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserDetailComponent } from './feature/user/user-detail/user-detail.comp
     MenuComponent,
     NoComponentDefinedComponent,
     UserCreateComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
