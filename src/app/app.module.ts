@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserEditComponent } from './feature/user/user-edit/user-edit.component'
     NoComponentDefinedComponent,
     UserCreateComponent,
     UserDetailComponent,
-    UserEditComponent
+    UserEditComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
