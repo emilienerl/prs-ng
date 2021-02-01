@@ -35,7 +35,7 @@ export class RequestDetailComponent implements OnInit {
   }
 
   delete() {
-    // delete the request from the DB
+    // delete the request from the database
     this.requestSvc.delete(this.request.id).subscribe(
       resp => {
         this.request = resp as Request;
