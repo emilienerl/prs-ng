@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.class';
@@ -16,7 +17,8 @@ export class UserCreateComponent implements OnInit {
 
   //inject the service
   constructor(private userSvc: UserService, 
-              private router: Router) { }
+              private router: Router,
+              private loc: Location) { }
 
   ngOnInit(): void {
     //don't need to do anything here because we are just going to show a blank form
@@ -35,7 +37,11 @@ export class UserCreateComponent implements OnInit {
       err => {
         console.log(err);
       }
-    );
+      )
+    }
+  
+    backClicked() {
+      this.loc.back();
+    }
+  
   }
-
-}

@@ -27,71 +27,71 @@ export class RequestLinesComponent implements OnInit {
 
   ngOnInit(): void {
     // get the id from the url
-    this.route.params.subscribe(
-      parms => {
-        this.requestId = parms['id'];
-      });
+   this.route.params.subscribe(
+    parms => {
+      this.requestId = parms['id'];
+    });
 
-    // get the request by the request id
-    this.requestSvc.getById(this.requestId).subscribe(
-      resp => {
-        this.request = resp as Request;
+  // get the request by the request id
+  this.requestSvc.getById(this.requestId).subscribe(
+    resp => {
+      this.request = resp as Request;
 
-        // Disable Submit for Review Button if in Review Status
-        if(this.request.status === "Review") {
-          this.isDisabled = true;
-        } else {
-          this.isDisabled = false;
-        }
-      },
-      err => {
-        console.log(err);
+      // Disable Submit for Review Button if in Review Status
+      if(this.request.status === "Review") {
+        this.isDisabled = true;
+      } else {
+        this.isDisabled = false;
       }
-    )
+    },
+    err => {
+      console.log(err);
+    }
+  )
 
-    // get the line items by request id
-    this.lineItemSvc.getLineItemsByRequestId(this.requestId).subscribe(
-      resp => {
-        this.lineItems = resp as LineItem[];
-        // Set flag to true if no lineItems
-        if(this.lineItems.length === 0) {
-          this.isHidden = true;
-        }
-      },
-      err => {
-        console.log(err);
+  // get the line items by request id
+  this.lineItemSvc.getLineItemsByRequestId(this.requestId).subscribe(
+    resp => {
+      this.lineItems = resp as LineItem[];
+      // Set flag to true if no lineItems
+      if(this.lineItems.length === 0) {
+        this.isHidden = true;
       }
-    )
+    },
+    err => {
+      console.log(err);
+    }
+  )
 
-  }
+}
 
-  // Delete a lineitem from the request
-  delete(lineItemId: number) {
-    // delete the product from the database
-    this.lineItemSvc.delete(lineItemId).subscribe(
-      resp => {
-        this.lineItem = resp as LineItem;
-        // reload current page
-        this.ngOnInit();
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+// Delete a lineitem from the request
+delete(lineItemId: number) {
+  // delete the product from the database
+  this.lineItemSvc.delete(lineItemId).subscribe(
+    resp => {
+      this.lineItem = resp as LineItem;
+      // reload current page
+      this.ngOnInit();
+    },
+    err => {
+      console.log(err);
+    }
+  );
+}
 
-  // Submit a request for review
-  submit() {
-    this.requestSvc.submit(this.request).subscribe(
-      resp => {
-        this.request = resp as Request;
-        // forward to the request list component
-        this.router.navigateByUrl("/request-list");
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+// Submit a request for review
+submit() {
+  this.requestSvc.submit(this.request).subscribe(
+    resp => {
+      this.request = resp as Request;
+      // forward to the request list component
+      this.router.navigateByUrl("/request-list");
+    },
+    err => {
+      console.log(err);
+    }
+  );
+}
 
 }

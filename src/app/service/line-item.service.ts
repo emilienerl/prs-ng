@@ -17,22 +17,22 @@ export class LineItemService {
     return this.http.get(URL+'/') as Observable<LineItem[]>;
   }
 
-  // get lineItem by id
+  // get a lineItem by id
   getById(id) : Observable<LineItem> {
     return this.http.get(URL+'/'+id) as Observable<LineItem>;
   }
 
-  // create lineItem
+  // create a lineItem
   create(lineItem: LineItem) : Observable<LineItem> {
     return this.http.post(URL+'/', lineItem) as Observable<LineItem>;
   }
 
-  // update lineItem
+  // update a lineItem
   update(lineItem: LineItem) : Observable<LineItem> {
     return this.http.put(URL+'/', lineItem) as Observable<LineItem>;
   }
 
-  // delete lineItem
+  // delete a lineItem
   delete(id) : Observable<LineItem> {
     return this.http.delete(URL+'/'+id) as Observable<LineItem>;
   }

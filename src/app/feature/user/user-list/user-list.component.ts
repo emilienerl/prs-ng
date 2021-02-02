@@ -10,6 +10,7 @@ import { UserService } from 'src/app/service/user.service';
 export class UserListComponent implements OnInit {
   title="User List";
   users: User[] = [];
+  isNotAdmin = false;
 
   constructor(private userSvc: UserService) { }
 
