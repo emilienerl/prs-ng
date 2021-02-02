@@ -12,7 +12,7 @@ import { Request } from 'src/app/model/request.class';
   styleUrls: ['./request-approve.component.css']
 })
 export class RequestApproveComponent implements OnInit {
-  requestTitle = "PurchaseRequest Approve/Reject";
+  requestTitle = "PurchaseRequest Approve or Reject";
   linesTitle = "Lines";
   approveBtn = "Approve";
   rejectBtn = "Reject";
