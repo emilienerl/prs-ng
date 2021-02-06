@@ -17,6 +17,8 @@ export class RequestReviewComponent implements OnInit {
 
   ngOnInit(): void {
     // populate list of requests in review status
+    this.sysSvc.checkLogin();
+    console.log("hi");
     this.requestSvc.review(this.sysSvc.loggedInUser.id).subscribe(
       resp => {
         this.requests = resp as Request[];
